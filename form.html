@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="form.js"></script>
+</head>
+<form>
+  <fieldset>
+    <legend>Personal Information</legend>
+    <table>
+      <tbody>
+
+        <tr>
+          <td>
+            <label for="full-name">Nama Lengkap</label>
+          </td>
+          <td>
+            <input id="full-name" name="fullName" type="text">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="full-name">Kompartemen</label>
+          </td>
+          <td>
+       
+      <select name="kompartemen" id="kompartemen">
+        <option value="Korkom">Komunikasi Korporat</option>
+        <option value="SPI">Satuan Pengawas Internal</option>
+        <option value="Diklat">Pembelajaran & MP</option>
+        <option value="Akun">Akuntansi</option>
+        <option value="Niaga">Niaga</option>
+        <option value="Distribusi">Distribusi</option>
+        <option value="Riset">Riset Korporat</option>
+        <option value="Pengembangan Korporat">Pengembangan Korporat</option>
+             <option value="SDM">SDM</option>
+              <option value="Umum">Umum & PKBL</option>
+               <option value="TKK">Tata Kelola Korporasi</option>
+
+      </select>
+    </datalist> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="full-name">e-mail</label>
+          </td>
+          <td>
+            <input id="email" name="email" type="text">
+          </td>
+           </tr>
+          <tr>
+          <td>
+            <label for="nohp">No HP</label>
+          </td>
+          <td>
+            <input id="nohp" name="nohp" type="text">
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  <label for="gender" id="gender">Gender:</label>
+  <input id="male-radio" type="radio" name="gender" value="Laki-Laki">
+  <label for="male-radio">Laki-Laki</label>
+  <input id="female-radio" type="radio" name="gender" value="perempuan">
+  <label for="female-radio">Perempuan</label>
+
+<br/>
+<form>
+ 
+
+</form>
+  </fieldset>
+  <fieldset>
+    <legend>Minat Kegiatan</legend>
+   
+  <input class="messageCheckbox" id="gardening-checkbox" type="checkbox" name="interest" value="Gardening">
+  <label for="gardening-checkbox">Gardening</label> <br/>
+
+  <input class="messageCheckbox" id="reading-checkbox" type="checkbox" name="interest" value="Reading">
+  <label for="reading-checkbox">Reading</label><br/>
+
+   <input class="messageCheckbox" id="running-checkbox" type="checkbox" name="interest" value="Running">
+  <label for="running-checkbox">Running</label> <br/>
+
+   <input class="messageCheckbox" id="archery-checkbox" type="checkbox" name="interest" value="Archery">
+  <label for="archery-checkbox">Archery</label> <br/>
+
+ <input class="messageCheckbox" id="photo-checkbox" type="checkbox" name="interest" value="Photography">
+  <label for="photo-checkbox">Photography</label> <br/>
+
+   <input class="messageCheckbox" id="yoga-checkbox" type="checkbox" name="interest" value="Yoga">
+  <label for="yoga-checkbox">Yoga</label> 
+
+
+
+  </fieldset> <br/>
+</form>
+
+<p> Nb = Silahkan akses <a href="listkegiatan.html"> disini</a> untuk melihat jadwal dan harga member kegiatan sebelum submit registrasi!</p>
+  <input type="submit" value="Submit" onclick="submitform()">
+
+</html>
