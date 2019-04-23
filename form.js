@@ -25,7 +25,8 @@ function validateEmail(email) {
     var emailValid = re.test(String(email).toLowerCase());
 
     if (emailValid) {
-      return     } else {
+      return ""
+    } else {
       return "format email salah, silahkan ketikkan kembali dengan benar"
     }
 }
@@ -37,27 +38,72 @@ function calculateTotal(selected_jadwal){
 	var total = 0;
 
   for (var index = 0; index < selected_jadwal.length; ++index) {
- 
       total = total + harga[selected_jadwal[index]];
   }
   return total
 }
 
 function submitform(){
+  document.getElementById("error-email").innerHTML = "";
+  document.getElementById("error-message").innerHTML = "";
+  document.getElementById("error-gender").innerHTML = "";
+
+
   var name = document.getElementById("full-name").value;
   var email = document.getElementById("email").value;
   var nohp = document.getElementById("nohp").value;
   var dropdown = document.getElementById("kompartemen");
   var choices = dropdown.options[dropdown.selectedIndex].value;
+
+  var genderInput = document.querySelector('input[name="gender"]:checked');
+  if (genderInput == null ){
+   document.getElementById("error-gender").innerHTML = "Silahkan pilih salah satu gender!";
+   return
+  }
   var selectedGender = document.querySelector('input[name="gender"]:checked').value;
+
+
   var checkedValue =[];
   var inputElements = document.getElementsByClassName('messageCheckbox');
+
   for(var i=0; inputElements[i]; ++i){
     if(inputElements[i].checked){
       checkedValue.push(inputElements[i].value)
       // break;
     }
   }
+
+  
+ var errorValidateEmail = validateEmail(email);
+ if (errorValidateEmail !== ""){
+  document.getElementById("error-email").innerHTML = errorValidateEmail;
+  return
+  }
+
+
+ var errorOverlapping = checkOverlapping(checkedValue);
+ if (errorOverlapping !== ""){
+  document.getElementById("error-message").innerHTML = errorOverlapping;
+ }
+
+var table = document.getElementById("myTable");
+ var row = table.insertRow(0);
+ var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+   var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+
+  cell1.innerHTML = "name";
+  cell2.innerHTML = "kompartemen";
+  cell3.innerHTML = "email";
+  cell4.innerHTML = "nohp";
+  cell5.innerHTML = "gender";
+  cell6.innerHTML = "overlapping";
+
+
+
+
+
 
 
 // console.log(calculateTotal(checkedValue));
